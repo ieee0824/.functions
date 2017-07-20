@@ -1,5 +1,16 @@
 #!/bin/bash -e
 
+#######################################
+# Date: 2017-07-20
+# Author: ieee0824
+
+# Details:
+#	File search function on bash
+#
+# LICENSE:
+#	MIT
+#######################################
+
 function tgrep() {
 	if [ $# = 0 ]; then
 		echo "no args"
