@@ -1,11 +1,12 @@
 #!/bin/bash -e
 
 #######################################
+# Name: Traverse grep
 # Date: 2017-07-20
 # Author: ieee0824
-
+#
 # Details:
-#	File search function on bash
+#	File search function on bash.
 #
 # LICENSE:
 #	MIT
