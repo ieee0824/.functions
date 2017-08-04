@@ -2,6 +2,7 @@
 
 function cl() {
 	PROFILE=${PROFILE:=default}
+	REGION=${REGION:=ap-northeast-1}
 	if ! type "aws" > /dev/null; then
 		return 1;
 	elif ! type "jq" > /dev/null; then
@@ -12,7 +13,7 @@ function cl() {
 		return 1;
 	fi
 
-	LOG_GROUP=$(aws logs describe-log-groups --max-items 2000 --profile $PROFILE | jq '.logGroups[].logGroupName' | peco)
-	awslogs get --aws-region ap-northeast-1 $LOG_GROUP ALL --watch --profile $PROFILE
+	LOG_GROUP=$(aws logs describe-log-groups --max-items 2000 --profile $PROFILE | jq '.logGroups[].logGroupName' | sed -e 's/\"//g' | peco)
+	awslogs get --aws-region $REGION $LOG_GROUP ALL --watch --profile $PROFILE
 }
 
