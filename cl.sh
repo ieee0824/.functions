@@ -1,5 +1,10 @@
 #!/bin/bash
 
+####################################
+# Cloud watch logsを見やすくする
+####################################
+
+
 function cl() {
 	PROFILE=${PROFILE:=default}
 	REGION=${REGION:=ap-northeast-1}
